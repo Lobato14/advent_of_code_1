@@ -27,8 +27,7 @@ fun calcularCalibracionDeValores(listaDeCadenas: List<String>): Int {
         val ultimoDigito = linea.last().toString().toIntOrNull()
 
         if (primerDigito != null && ultimoDigito != null) {
-            val calibrationValue = primerDigito * 10 + ultimoDigito
-            suma += calibrationValue
+            suma += primerDigito + ultimoDigito
         }
     }
 
