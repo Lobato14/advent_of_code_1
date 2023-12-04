@@ -20,16 +20,21 @@ fun calcularCalibracionDeValores(listaDeCadenas: List<String>): Int {
      * @param listaDeCadenas Lista de cadenas que contienen valores de calibración.
      * @return La suma de todos los valores de calibración.
      */
-    var suma = 0
+    // var sumaTotal = 0
 
+    val listaDigitos = mutableListOf<Int>()
     for (linea in listaDeCadenas) {
-        val primerDigito = linea.first().toString().toIntOrNull()
-        val ultimoDigito = linea.last().toString().toIntOrNull()
-
-        if (primerDigito != null && ultimoDigito != null) {
-            suma += primerDigito + ultimoDigito
+        var numerosLinea = ""
+        for (caracter in linea) {
+            if (caracter.isDigit()) {
+                numerosLinea += caracter
+            }
         }
+        var primerDigito = numerosLinea.first()
+        var segundoDigito = numerosLinea.last()
+        val digitoCreado = "$primerDigito$segundoDigito".toInt()
+        listaDigitos.add(digitoCreado)
     }
 
-    return suma
+    return listaDigitos.sum()
 }

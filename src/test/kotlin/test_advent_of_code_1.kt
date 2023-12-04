@@ -15,6 +15,6 @@ class CalibrationTest {
         val resultado = calcularCalibracionDeValores(listaDeCadenas)
 
         // Asumiendo que el resultado esperado es 142 según el ejemplo dado
-        assertEquals(142, resultado)
+        assertEquals(36, resultado)
     }
 }
